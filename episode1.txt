@@ -1,0 +1,43 @@
+what is emmet?
+https://docs.emmet.io/cheat-sheet/
+
+
+Difference between a library and a framework?
+Libray targets a special functionalty where as  a framework tries to provide everything required to develop.
+
+
+what is CDN ,why do we use it?
+
+CDN  is a content delivery network ,any type of static data like html css images videos can be served through CDN.
+CDN is a group of distributed servers which helps in delivering the content as quicklya as possible ,reduces the traffic of a web application and optimize the performance.
+
+why react known as React?
+
+its called react because it reacts,it was developed by Facebook to improve user interface development and more efficiently change (REACT to) 
+what user sees when they are typing and submitting anything.
+
+
+what is cross origin?
+The crossorigin attribute, valid on the <audio>, <img>, <link>, 
+<script>, and <video> elements, provides support for CORS, 
+defining how the element handles cross-origin requests, 
+thereby enabling the configuration of the CORS requests for 
+the element's fetched data. Depending on the element, 
+the attribute can be a CORS settings attribute.
+
+
+
+Diiference between react and reactDOm?
+The reason React and ReactDOM were split into two libraries was due to the arrival of React Native. 
+React contains functionality utilised in web and mobile apps. ReactDOM functionality is utilised only in web apps.
+
+what is Difference betweem react.development.js and react.production.js files via CDN?
+
+The very basic difference is that Production Build has ugly, minified(compressed) version of your javascript code, 
+so this makes rendering of file on end user's browser very quick and performance enhancing
+
+what are async and defer?
+
+Async allows your script to run as soon as it's loaded, without blocking
+ other elements on the page. Defer means your script will only 
+ execute after the page has finished loading. In most cases, async is the better option — but there are exceptions.
