@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Layout from "./components/Layout";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -13,28 +15,7 @@ Logo
 Nav items
  */
 
-const Header = () => {
-    return(
 
-
-    <div className="header-container">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-        />
-      </div>
-      <div className="navItems">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-    )
-    };
 const resList= [
             {
               "type": "restaurant",
@@ -2202,46 +2183,8 @@ const resList= [
             },
             "subtype": "basic"
           }
-const RestaurantCard = (props) => {
-  const { resList } = props;
-  return (
-    <div className="resCard">
-      <img
-        className="resImg"
-        src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+resList.data.cloudinaryImageId}
-      />
-      <h3>{resList.data.name}</h3>
-      <h4>{resList.data.cuisines}</h4>
-      <h4>{resList.data.avgRating}</h4>
-      <h4>{resList.data.costForTwo}</h4>
-      <h4>{resList.data.deliveryTime}</h4>
-    </div>
-  );
-};
 
-const Body = () => {
-  return(   
-  <div className="body-container">
-      <div className="res-container">
-          {resList.map((resObj)=>{
- return <RestaurantCard key={resObj.data.id} resList={resObj}/>
-          }
-        )}
-        
-         
-   
-      </div>
-    </div>
-  
-)};
-const Layout = () => (
-  <>
-    <div className="app-container">
-      <Header />
-      <Body />
-    </div>
-  </>
-);
+
 
 /* 
 Body
