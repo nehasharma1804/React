@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 
 const Body = () => {
   const [searchText, setSearchtext] = useState("");
-  const [allRestaurants, setAllRestaurants] = useState(resList);
+  const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   function filterData(searchText, restaurants) {
     const filteredData =
       searchText !== ""
         ? restaurants.filter((res) => {
-            return res.data.name.includes(searchText);
+            return res?.data?.name?.toLowerCase().includes(searchText?.toLowerCase());
           })
         : restaurants;
     console.log(filteredData);
@@ -29,13 +29,20 @@ return (<h1>Shimmer is loading</h1>
     const res = await data.json();
     //setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(res?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(res?.data?.cards[2]?.data?.data?.cards);
   }
   useEffect(() => {
     console.log("calling use effect");
     getRestaurantData();
   }, []);
   console.log("render");
-  return filteredRestaurants.length==0?(<ShimmerUi/>):(
+
+/* early return
+  if(allRestaurants.length===0){
+    return null
+  } */
+  
+  return allRestaurants.length==0?(<ShimmerUi/>):(
     <div className="body-container">
       <div className="search-container">
         Search:
@@ -56,7 +63,7 @@ return (<h1>Shimmer is loading</h1>
         </button>
       </div>
       <div className="res-container">
-        {filteredRestaurants.map((resObj) => {
+        {filteredRestaurants?.length===0?<h1>No Match found!!</h1>:filteredRestaurants?.map((resObj) => {
           return <RestaurantCard {...resObj.data} key={resObj.data.id} />;
         })}
       </div>
