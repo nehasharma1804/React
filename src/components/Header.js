@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Header = () => {
+  const [loggedIn,setLLoggedIn]=useState(false);
     return(
 
 
@@ -16,6 +19,10 @@ const Header = () => {
           <li>Contact Us</li>
           <li>Cart</li>
         </ul>
+      </div>
+      <div className="login-container">
+      {loggedIn?<button onClick={()=>{setLLoggedIn(false)}}>Login</button>:
+      <button onClick={()=>{setLLoggedIn(true)}}>Logout</button>}
       </div>
     </div>
     )
